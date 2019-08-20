@@ -19,10 +19,10 @@ port = 3306
 user = 'root'
 
 # 数据库密码
-passwd = '123456'
+passwd = '0000'
 
 # 数据库名
-DB_NAME = 'proxy'
+DB_NAME = 'domain'
 
 # 表名
 TABLE_NAME = 'valid_ip'
@@ -40,4 +40,4 @@ SUCCESS_RATE = 0.8
 TIME_OUT_PENALTY = 10
 
 # 每隔多久检测一次
-CHECK_TIME_INTERVAL = 24*3600
+CHECK_TIME_INTERVAL = 0.1*3600
