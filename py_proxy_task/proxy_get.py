@@ -37,7 +37,7 @@ class IPFactory:
         # 选择该数据库
         use_db_str = 'use ' + cfg.DB_NAME + ' ;'
         # 创建表格
-        create_table_str = "CREATE TABLE " + cfg.TABLE_NAME + """(
+        create_table_str = "CREATE TABLE IF NOT EXISTS " + cfg.TABLE_NAME + """(
           `content` varchar(30) NOT NULL,
           `test_times` int(5) NOT NULL DEFAULT '0',
           `failure_times` int(5) NOT NULL DEFAULT '0',
@@ -50,8 +50,8 @@ class IPFactory:
         conn = mdb.connect(cfg.host, cfg.user, cfg.passwd)
         cursor = conn.cursor()
         try:
-            cursor.execute(drop_db_str)
-            cursor.execute(create_db_str)
+            # cursor.execute(drop_db_str)
+            # cursor.execute(create_db_str)
             cursor.execute(use_db_str)
             cursor.execute(create_table_str)
             conn.commit()
